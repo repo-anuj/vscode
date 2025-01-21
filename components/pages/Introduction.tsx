@@ -1,21 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useCallback } from 'react'
-import { Particles } from '@tsparticles/react'
-import { type Container, type Engine } from '@tsparticles/engine'
-import { loadSlim } from '@tsparticles/slim'
-import PageContainer from '../layout/PageContainer'
 
 const Introduction = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine)
-  }, [])
-
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    console.log(container)
-  }, [])
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

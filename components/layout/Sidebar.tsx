@@ -12,6 +12,7 @@ interface FolderItem {
 interface SidebarProps {
   isOpen: boolean
   onFileClick: (file: string) => void
+  toggleSidebar: () => void
 }
 
 const folders: FolderItem[] = [
@@ -92,7 +93,7 @@ const FolderTree = ({ item, depth = 0, onFileClick }: { item: FolderItem; depth?
   )
 }
 
-const Sidebar = ({ isOpen, onFileClick }: SidebarProps) => {
+const Sidebar = ({ isOpen, onFileClick, toggleSidebar }: SidebarProps) => {
   return (
     <div
       className={`w-64 bg-gray-50 dark:bg-[#1e1e1e] border-r border-[#0078d4]/30 transition-all duration-300 ${
