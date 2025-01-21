@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState } from 'react'
 import { File, Search, Github, Bug, Package, Mail, ChevronRight, ChevronDown, Linkedin, Twitter, Instagram, Menu, X as XIcon } from 'lucide-react'
 import ContactForm from './ContactForm'
@@ -49,7 +48,7 @@ const folders: FolderItem[] = [
 
 interface SidebarProps {
   isCollapsed: boolean;
-  toggleSidebar: () => void;
+  toggleSidebar: () => void; // Add toggleSidebar to props
   onFileClick: (pageType: PageType) => void;
   onGitHubClick: () => void;
 }
@@ -74,6 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar, onFileCli
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
+    toggleSidebar() // Use toggleSidebar here
   }
 
   const sidebarContent = (
@@ -144,7 +144,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar, onFileCli
           </li>
         </ul>
       </nav>
-
       {activeSection === 'File Explorer' && !isCollapsed && (
         <div className="p-2 border-t border-gray-200 dark:border-[#3c3c3c] transition-colors duration-200">
           <h2 className="text-xs uppercase text-gray-500 dark:text-[#6c6c6c] mb-2 transition-colors duration-200">File Structure</h2>
@@ -218,7 +217,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar, onFileCli
       >
         {isMobileMenuOpen ? <XIcon size={24} /> : <Menu size={24} />}
       </button>
-
       {/* Mobile Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 z-40 bg-gray-100 dark:bg-[#252526] text-gray-800 dark:text-[#cccccc] w-64 flex flex-col transition-all duration-300 transform md:hidden
@@ -227,7 +225,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar, onFileCli
         {sidebarContent}
         {socialLinks}
       </aside>
-
       {/* Desktop Sidebar */}
       <aside
         className={`hidden md:flex flex-col bg-gray-100 dark:bg-[#252526] text-gray-800 dark:text-[#cccccc] transition-all duration-300
@@ -236,11 +233,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar, onFileCli
         {sidebarContent}
         {socialLinks}
       </aside>
-
       <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
     </>
   )
 }
 
 export default Sidebar
-
