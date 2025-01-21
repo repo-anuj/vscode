@@ -5,6 +5,7 @@ import { useCallback } from 'react'
 import { Particles } from '@tsparticles/react'
 import { type Container, type Engine } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
+import PageContainer from '../layout/PageContainer'
 
 const Introduction = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -16,67 +17,8 @@ const Introduction = () => {
   }, [])
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="relative min-h-full bg-white dark:bg-[#1e1e1e] overflow-hidden"
-    >
-      {/* Particle Background */}
-      <div className="absolute inset-0">
-        <Particles
-          className="w-full h-full"
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            background: {
-              color: {
-                value: 'transparent',
-              },
-            },
-            fpsLimit: 120,
-            particles: {
-              color: {
-                value: '#0078d4',
-              },
-              links: {
-                color: '#0078d4',
-                distance: 150,
-                enable: true,
-                opacity: 0.5,
-                width: 1,
-              },
-              move: {
-                direction: 'none',
-                enable: true,
-                outModes: {
-                  default: 'bounce',
-                },
-                random: false,
-                speed: 2,
-                straight: false,
-              },
-              number: {
-                value: 80,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: 'circle',
-              },
-              size: {
-                value: { min: 1, max: 3 },
-              },
-            },
-            detectRetina: true,
-          }}
-        />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-full p-8 text-center">
+    <PageContainer title="Welcome">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-300px)] text-center">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -128,7 +70,7 @@ const Introduction = () => {
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </PageContainer>
   )
 }
 

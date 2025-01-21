@@ -1,9 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { motion } from 'framer-motion'
+import PageContainer from '../layout/PageContainer'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -79,41 +80,31 @@ const Skills = () => {
   }, [])
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-full bg-white dark:bg-[#1e1e1e] p-8"
-      ref={skillsRef}
-    >
-      <div className="max-w-6xl mx-auto">
-        <motion.h1
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center"
-        >
-          Skills & Expertise
-        </motion.h1>
-
+    <PageContainer title="Skills & Expertise">
+      <div ref={skillsRef}>
         {categories.map((category, categoryIndex) => (
           <motion.div
             key={category}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 + categoryIndex * 0.1 }}
-            className="mb-12"
+            className="mb-12 relative"
           >
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-              {category}
-            </h2>
+            {/* Category header with blue accent */}
+            <div className="flex items-center mb-6">
+              <div className="w-1 h-6 bg-[#0078d4] rounded-r mr-4 separator-line transform-origin-left" />
+              <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+                {category}
+              </h2>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skills
                 .filter(skill => skill.category === category)
                 .map((skill, index) => (
                   <div
                     key={skill.name}
-                    className="skill-card bg-gray-50 dark:bg-[#2d2d2d] p-6 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    className="skill-card bg-gray-50 dark:bg-[#2d2d2d] p-6 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-2 border-[#0078d4]"
                   >
                     <div className="flex items-center mb-4">
                       <div className="w-8 h-8 mr-3 flex items-center justify-center">
@@ -146,16 +137,19 @@ const Skills = () => {
           </motion.div>
         ))}
 
-        {/* Additional Skills Section */}
+        {/* Additional Skills Section with blue accent */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-12 bg-gray-50 dark:bg-[#2d2d2d] p-8 rounded-lg"
+          className="mt-12 bg-gray-50 dark:bg-[#2d2d2d] p-8 rounded-lg border-t-2 border-[#0078d4]"
         >
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-            Additional Skills
-          </h2>
+          <div className="flex items-center mb-6">
+            <div className="w-1 h-6 bg-[#0078d4] rounded-r mr-4 separator-line transform-origin-left" />
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              Additional Skills
+            </h2>
+          </div>
           <div className="flex flex-wrap gap-3">
             {[
               'REST APIs', 'GraphQL', 'Redux', 'Jest', 'CI/CD', 'Agile',
@@ -167,7 +161,7 @@ const Skills = () => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.05 }}
-                className="px-4 py-2 bg-white dark:bg-[#1e1e1e] rounded-full text-sm text-gray-700 dark:text-gray-300 hover:shadow-md transition-all duration-300 cursor-default"
+                className="px-4 py-2 bg-white dark:bg-[#1e1e1e] rounded-full text-sm text-gray-700 dark:text-gray-300 hover:shadow-md transition-all duration-300 cursor-default border border-[#0078d4]/20 hover:border-[#0078d4]"
               >
                 {skill}
               </motion.span>
@@ -175,7 +169,7 @@ const Skills = () => {
           </div>
         </motion.div>
       </div>
-    </motion.div>
+    </PageContainer>
   )
 }
 
