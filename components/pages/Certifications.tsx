@@ -22,22 +22,22 @@ const Certifications = () => {
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">name</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Web Development Certification"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Web Development Certification&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">issuer</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Platform Name"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Platform Name&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">date</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"2023"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;2023&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">url</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"https://certification-url.com"</span>
+        <span className="text-green-600 dark:text-green-400">&quot;https://certification-url.com&quot;</span>
       </div>
 
       <div className="ml-8">

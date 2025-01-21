@@ -22,22 +22,22 @@ const Education = () => {
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">degree</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Bachelor's in Computer Science"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Bachelor&apos;s in Computer Science&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">institution</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"University Name"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;University Name&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">duration</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"2019 - 2023"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;2019 - 2023&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">grade</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"First Class"</span>
+        <span className="text-green-600 dark:text-green-400">&quot;First Class&quot;</span>
       </div>
 
       <div className="ml-8">

@@ -18,23 +18,23 @@ const Bio = () => {
 
       <div className="ml-8">
         <span className="text-blue-600 dark:text-blue-400">name</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Anuj Dubey"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Anuj Dubey&quot;</span>,
       </div>
 
       <div className="ml-8">
         <span className="text-blue-600 dark:text-blue-400">role</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Full Stack Developer"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Full Stack Developer&quot;</span>,
       </div>
 
       <div className="ml-8">
         <span className="text-blue-600 dark:text-blue-400">location</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Your Location"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Your Location&quot;</span>,
       </div>
 
       <div className="ml-8">
         <span className="text-blue-600 dark:text-blue-400">interests</span>:{' '}
         <span className="text-yellow-600 dark:text-yellow-400">{'['}</span>
-        <span className="text-green-600 dark:text-green-400">"Coding", "Technology", "Innovation"</span>
+        <span className="text-green-600 dark:text-green-400">&quot;Coding&quot;, &quot;Technology&quot;, &quot;Innovation&quot;</span>
         <span className="text-yellow-600 dark:text-yellow-400">{']'}</span>
       </div>
 

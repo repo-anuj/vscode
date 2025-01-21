@@ -22,17 +22,17 @@ const Experience = () => {
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">position</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Software Developer"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Software Developer&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">company</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"Company Name"</span>,
+        <span className="text-green-600 dark:text-green-400">&quot;Company Name&quot;</span>,
       </div>
 
       <div className="ml-12">
         <span className="text-blue-600 dark:text-blue-400">duration</span>:{' '}
-        <span className="text-green-600 dark:text-green-400">"2022 - Present"</span>
+        <span className="text-green-600 dark:text-green-400">&quot;2022 - Present&quot;</span>
       </div>
 
       <div className="ml-8">

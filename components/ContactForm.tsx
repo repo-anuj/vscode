@@ -22,8 +22,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   const [submissions, setSubmissions] = useState<FormData[]>([])
 
   const questions = [
-    "Hey there! We're excited to link 🔗\nTo start, could you give us your email?",
-    "Awesome! And what's your name?",
+    "Hey there! We&apos;re excited to link 🔗\nTo start, could you give us your email?",
+    "Awesome! And what&apos;s your name?",
     "Perfect, and how can we help you?"
   ]
 
@@ -127,7 +127,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
             
             {step === 2 && (
               <div className="mt-4 text-gray-600 dark:text-[#cccccc] transition-colors duration-200">
-                <p>Beautiful! Here's what we've got:</p>
+                <p>Beautiful! Here&apos;s what we&apos;ve got:</p>
                 <p>$ email: {formData.email}</p>
                 <p>$ name: {formData.name}</p>
                 <p>$ message: {formData.message}</p>

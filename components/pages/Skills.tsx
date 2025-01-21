@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import PageContainer from '../layout/PageContainer'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -101,18 +102,19 @@ const Skills = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skills
                 .filter(skill => skill.category === category)
-                .map((skill, index) => (
+                .map((skill) => (
                   <div
                     key={skill.name}
                     className="skill-card bg-gray-50 dark:bg-[#2d2d2d] p-6 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-l-2 border-[#0078d4]"
                   >
                     <div className="flex items-center mb-4">
                       <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                        <img
+                        <Image
                           src={skill.icon}
                           alt={skill.name}
-                          className="w-6 h-6"
-                          style={{ filter: 'brightness(0.8)' }}
+                          width={24}
+                          height={24}
+                          className="filter brightness-75"
                         />
                       </div>
                       <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100">

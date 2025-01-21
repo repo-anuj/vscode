@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Globe, Mail, MapPin } from 'lucide-react'
+import { Globe, Mail, MapPin } from 'lucide-react'
+import Image from 'next/image'
 
 const GitHub = () => {
   const stats = [
@@ -33,10 +34,12 @@ const GitHub = () => {
           transition={{ delay: 0.1 }}
           className="flex flex-col md:flex-row items-center gap-8 mb-12 bg-gray-50 dark:bg-[#2d2d2d] p-8 rounded-lg"
         >
-          <img
-            src="https://avatars.githubusercontent.com/repo-anuj"
+          <Image
+            src="/avatar.jpg"
             alt="Anuj Dubey"
-            className="w-32 h-32 rounded-full border-4 border-white dark:border-[#1e1e1e] shadow-lg"
+            width={128}
+            height={128}
+            className="rounded-full border-4 border-white dark:border-[#1e1e1e] shadow-lg"
           />
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">
@@ -71,7 +74,7 @@ const GitHub = () => {
           transition={{ delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <div
               key={stat.label}
               className="bg-gray-50 dark:bg-[#2d2d2d] p-6 rounded-lg text-center"
@@ -128,23 +131,29 @@ const GitHub = () => {
           className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
           <div className="bg-gray-50 dark:bg-[#2d2d2d] p-4 rounded-lg">
-            <img
-              src="https://github-readme-stats.vercel.app/api/top-langs?username=repo-anuj&show_icons=true&locale=en&layout=compact&theme=dark&bg_color=2d2d2d&title_color=fff&text_color=fff&hide_border=true"
+            <Image
+              src="/github-stats/languages.png"
               alt="Top Languages"
+              width={400}
+              height={200}
               className="w-full"
             />
           </div>
           <div className="bg-gray-50 dark:bg-[#2d2d2d] p-4 rounded-lg">
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=repo-anuj&show_icons=true&locale=en&theme=dark&bg_color=2d2d2d&title_color=fff&text_color=fff&icon_color=58a6ff&hide_border=true"
+            <Image
+              src="/github-stats/stats.png"
               alt="GitHub Stats"
+              width={400}
+              height={200}
               className="w-full"
             />
           </div>
           <div className="bg-gray-50 dark:bg-[#2d2d2d] p-4 rounded-lg">
-            <img
-              src="https://github-readme-streak-stats.herokuapp.com/?user=repo-anuj&theme=dark&background=2d2d2d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&hide_border=true"
+            <Image
+              src="/github-stats/streak.png"
               alt="GitHub Streak"
+              width={400}
+              height={200}
               className="w-full"
             />
           </div>
@@ -160,9 +169,11 @@ const GitHub = () => {
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             GitHub Trophies
           </h2>
-          <img
-            src="https://github-profile-trophy.vercel.app/?username=repo-anuj&theme=darkhub&no-frame=true&margin-w=15&margin-h=15"
+          <Image
+            src="/github-stats/trophies.png"
             alt="GitHub Trophies"
+            width={800}
+            height={200}
             className="w-full"
           />
         </motion.div>
